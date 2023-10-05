@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login </title>
+     <link rel="stylesheet" th:href="@{../css/styles.css}">
+</head>
+<body>
+
+
+<a href="registration" class="btn-link">Registro</a>
+
+    <div class="container">
+        <div class="message" th:if="${param.error}">
+           Invalido Username o Password
+        </div>
+        <div class="message" th:if="${param.logout}">
+           Logout exitoso
+        </div>
+        
+        <h2>Entrar</h2>
+        <form 
+         th:action="@{/login}"
+         method="post"
+         
+        >
+            
+            
+            <div class="form-group">
+                <label for="username">Email:</label>
+                <input  type="email" id="username" name="username" placeholder="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input  type="password" id="password" name="password" placeholder="password" required>
+            </div>
+            <input type="submit" value="Entrar">
+        </form>
+        
+    </div>
+</body>
+</html>
